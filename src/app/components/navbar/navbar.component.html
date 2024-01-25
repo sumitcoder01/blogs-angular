@@ -1,0 +1,33 @@
+<header class="text-white body-font bg-purple-400 sticky">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a routerLink="/home" class="flex title-font font-medium items-center text-white mb-4 md:mb-0 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none">
+        <img class="w-6 h-6 md:w-8 md:h-8 object-cover rounded-full" src="assets/image/home1.png" alt="Logo">
+        <span class="ml-3 text-xl">Coding Blogs</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="mr-5 text-white  hover:text-black transition-colors duration-300 ease-in-out focus:outline-none">Home</a>
+        <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="mr-5 text-white  hover:text-black transition-colors duration-300 ease-in-out focus:outline-none">About</a>
+        <a routerLink="/blogs" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="mr-5 text-white  hover:text-black transition-colors duration-300 ease-in-out focus:outline-none">Blog</a>
+      </nav>
+        @if(!isLoggedIn){
+        <a routerLink="myaccount" class="mr-5 hover:text-gray-500 text-white cursor-pointer transition-colors duration-300 ease-in-out focus:outline-none"><i class="fas fa-user-circle"></i></a>
+        <button (click)="logout()"
+            class="cursor-pointer inline-flex items-center bg-red-500 border-0 py-1 px-3  hover:bg-red-700 rounded text-base mt-4 md:mt-0 transition-all duration-300 ease-in-out focus:outline-none focus:ring focus:border-blue-400">
+            Logout
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+        </button>
+        }@else{
+        <button routerLink="login"
+            class="cursor-pointer inline-flex items-center bg-blue-500 border-0 py-1 px-3  hover:bg-blue-700 rounded text-base mt-4 md:mt-0 transition-all duration-300 ease-in-out focus:outline-none focus:ring focus:border-blue-300">
+            Login
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+        </button>
+        }
+    </div>
+</header>
