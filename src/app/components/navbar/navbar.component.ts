@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-
+import { AuthService } from '../../services/auth/auth.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -9,19 +9,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent implements OnInit {
-  isLoggedIn: boolean;
-  constructor(private toastr: ToastrService) {
-    this.isLoggedIn=false;
-  }
-  ngOnInit() {
-    if (localStorage.getItem('auth-token')) this.isLoggedIn = true;
-    else this.
-    isLoggedIn = false;
-  }
+export class NavbarComponent{
+
+  constructor(private toastr: ToastrService, public authService: AuthService) { }
+
   logout() {
-    this.toastr.success('logout successfully', 'success!');
-    localStorage.removeItem('auth-token');
-    this.isLoggedIn = false;
+    this.authService.logout();
+    this.toastr.success('Logout successfully', 'success');
   }
 }

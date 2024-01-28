@@ -1,1 +1,41 @@
-<p>my-account works!</p>
+<div class="container mx-auto mt-8">
+    <div class="max-w-lg mx-auto bg-white p-8 rounded-md shadow-lg">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800">My Account</h2>
+            <div class="relative w-20 h-20">
+                <img src="https://source.unsplash.com/150x150/?portrait" alt="User Profile"
+                    class="rounded-full object-cover" />
+            </div>
+        </div>
+        <div>
+            <div class="mb-4">
+                <label class="text-sm text-gray-600 block">Name</label>
+                <p class="font-medium text-gray-800">{{ user.name }}</p>
+            </div>
+            <div class="mb-4">
+                <label class="text-sm text-gray-600 block">Email</label>
+                <p class="font-medium text-gray-800">{{ user.email }}</p>
+            </div>
+            <div class="mb-4">
+                <label class="text-sm text-gray-600 block">Created At</label>
+                <p class="font-medium text-gray-800">{{ user.createdAt | date }}</p>
+            </div>
+            <div class="mb-4">
+                <label class="text-sm text-gray-600 block">Updated At</label>
+                <p class="font-medium text-gray-800">{{ user.updatedAt | date }}</p>
+            </div>
+            <div class="mb-4">
+                <label class="text-sm text-gray-600 block">Password</label>
+                <div class="flex items-center">
+                    <p class="font-medium text-gray-800">**************</p>
+                </div>
+                <p class="font-medium mt-3 text-purple-600">Edit</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-gray-600 mt-14 px-5 py-5">
+        <h2 class="text-xl mb-10 text-center">Your Blogs</h2>
+        <app-user-blogs></app-user-blogs>
+    </div>
+</div>
