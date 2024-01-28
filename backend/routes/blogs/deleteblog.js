@@ -21,7 +21,7 @@ router.delete('/:id', fetchUser, async (req, res) => {
         res.status(200).json({ success: true, message: "Blog deleted Sucessfully" });
     }
     catch (error) {
-        console.error(error.message);
+        console.log(error.message);
         res.status(500).json({ success: false, error: "Internal Server Error" });
     }
 })

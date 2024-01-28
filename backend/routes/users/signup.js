@@ -36,7 +36,7 @@ router.post("/", [
             res.status(200).json({ success: true, message: 'Signup Successfully' });
 
         } catch (error) {
-            console.error(error.message);
+            console.log(error.message);
             res.status(500).json({ success: false, error: "Internal Server Error" });
         }
     }

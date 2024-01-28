@@ -26,6 +26,9 @@ export class MyAccountComponent implements OnInit {
   };
   constructor(private authService: AuthService,private toastr: ToastrService,private router: Router) {}
   ngOnInit(): void {
+    if(!this.authService.isLoggedIn){
+      this.router.navigateByUrl('/');
+    }
     this.loadUser();
   }
   loadUser() {
@@ -35,7 +38,7 @@ export class MyAccountComponent implements OnInit {
       },
       error: (error: any) =>{
         console.log('Error fetching blogs', error);
-        this.toastr.error('IError fetching user', 'error');
+        this.toastr.error('Error fetching user', 'error');
         this.router.navigateByUrl('/');
       },
     });

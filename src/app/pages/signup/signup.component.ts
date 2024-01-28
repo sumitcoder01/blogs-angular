@@ -19,7 +19,11 @@ export class SignupComponent {
     password: '',
     confirmPassword: '',
   };
-  constructor(private toastr: ToastrService,private router: Router,private authService: AuthService) { }
+  constructor(private toastr: ToastrService, private router: Router, private authService: AuthService) {
+    if (this.authService.isLoggedIn) {
+      this.router.navigateByUrl('/');
+    }
+  }
 
   handleOnSubmit() {
     if (this.user.name.length < 3 || this.user.email.length < 3 || this.user.password.length < 3) {
