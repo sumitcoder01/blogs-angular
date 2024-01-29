@@ -29,13 +29,16 @@
                 <div class="flex items-center">
                     <p class="font-medium text-gray-800">**************</p>
                 </div>
-                <p class="font-medium mt-3 text-purple-600">Edit</p>
+                <p (click)="handleOnUpdate()" class="font-medium mt-3 text-purple-600">Edit</p>
             </div>
         </div>
     </div>
-
+    <app-add-blog></app-add-blog>
     <div class="text-gray-600 mt-14 px-5 py-5">
         <h2 class="text-xl mb-10 text-center">Your Blogs</h2>
         <app-user-blogs></app-user-blogs>
     </div>
 </div>
+@if(show){
+<app-update-user (save)="updateUser($event)" (close)="show=$event" [user]="user"></app-update-user>
+}

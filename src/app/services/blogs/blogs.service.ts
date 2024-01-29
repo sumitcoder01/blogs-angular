@@ -27,7 +27,7 @@ export class BlogsService {
   createBlog(blog: createtedBlog): Observable<Response> {
     let token = this.document.defaultView?.localStorage?.getItem('auth-token');
     let headers = new HttpHeaders().set('auth-token', `${token}`);
-    return this.http.post<Response>(environment.BASE_API + environment.Blogs.GET_USER_BLOGS, blog, { headers });
+    return this.http.post<Response>(environment.BASE_API + environment.Blogs.CREATE_BLOG, blog, { headers });
   }
 
   updateBlog(id: string, blog: Blog): Observable<Response> {

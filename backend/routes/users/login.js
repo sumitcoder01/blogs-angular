@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: '../../.env' });
 const express = require("express");
 const User = require("../../models/User");
 const router = express.Router();
@@ -35,7 +35,7 @@ router.post("/", [
         }
       }
 
-      const authToken = jwt.sign(data, JWT_SECRET, { expiresIn: '2d' });
+      const authToken = jwt.sign(data, JWT_SECRET, { expiresIn: '7h' });
       res.status(200).json({ success: true, authToken, message: "Login Sucessfully" });
 
 
