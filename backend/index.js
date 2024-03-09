@@ -6,10 +6,8 @@ const cors = require('cors');
 //Connect To MongoDB
 try {
     connectToMongo();
-    console.log("Connect to Database  Successfully");
 } catch (error) {
     console.error(error.message);
-    res.status(500).json({ success: false, error: "Internal Server Error" });
 }
 
 //Creating Node APP at Given Port(default 8000) 
