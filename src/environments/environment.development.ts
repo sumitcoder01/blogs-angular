@@ -1,6 +1,6 @@
 export const environment = {
     Production:false,
-    BASE_API:'http://localhost:5000/api/',
+    BASE_API:'https://blogs-angular.onrender.com/api/',
     Blogs:{
         GET_ALL_BLOGS:'blogs/getblogs',
         GET_BLOG:'blogs/getblog/',
